@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="周大凱｜國立勤益科技大學智慧自動化工程系應屆畢業生｜個人履歷網站" />
+  <title>周大凱｜個人履歷網站</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --bg-soft: #111827;
+      --card: rgba(255,255,255,0.08);
+      --card-solid: #ffffff;
+      --text: #0f172a;
+      --text-light: #e5e7eb;
+      --muted: #cbd5e1;
+      --primary: #2563eb;
+      --primary-2: #60a5fa;
+      --accent: #22c55e;
+      --border: rgba(148, 163, 184, 0.2);
+      --shadow: 0 20px 50px rgba(15, 23, 42, 0.18);
+      --radius-xl: 28px;
+      --radius-lg: 20px;
+      --radius-md: 16px;
+      --max-width: 1200px;
+      --nav-h: 78px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Noto Sans TC", "Microsoft JhengHei", system-ui, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(96,165,250,0.20), transparent 28%),
+        radial-gradient(circle at 85% 10%, rgba(34,197,94,0.14), transparent 22%),
+        linear-gradient(180deg, #f8fbff 0%, #eef4ff 45%, #f8fafc 100%);
+      line-height: 1.8;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .container {
+      width: min(var(--max-width), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(16px);
+      background: rgba(255,255,255,0.82);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.18);
+      box-shadow: 0 8px 30px rgba(15, 23, 42, 0.06);
+    }
+
+    .nav {
+      height: var(--nav-h);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      color: #0f172a;
+      letter-spacing: 0.5px;
+    }
+
+    .brand-badge {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--primary), var(--primary-2));
+      color: white;
+      font-weight: 900;
+      box-shadow: 0 10px 22px rgba(37,99,235,0.28);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav-links a {
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: #334155;
+      transition: 0.25s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      background: rgba(37,99,235,0.10);
+      color: var(--primary);
+    }
+
+    .hero {
+      padding: 54px 0 34px;
+    }
+
+    .hero-wrap {
+      display: grid;
+      grid-template-columns: 1.25fr 0.95fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .hero-main,
+    .hero-side,
+    .card,
+    .timeline-card,
+    .skill-card,
+    .award-card,
+    .contact-card,
+    .info-card,
+    .project-card,
+    .interest-card {
+      background: rgba(255,255,255,0.78);
+      border: 1px solid rgba(255,255,255,0.78);
+      box-shadow: var(--shadow);
+      border-radius: var(--radius-xl);
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-main {
+      position: relative;
+      padding: 40px;
+      overflow: hidden;
+    }
+
+    .hero-main::before {
+      content: "";
+      position: absolute;
+      right: -90px;
+      top: -120px;
+      width: 290px;
+      height: 290px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(37,99,235,0.18), transparent 68%);
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(37,99,235,0.10);
+      color: var(--primary);
+      font-weight: 800;
+      font-size: 0.94rem;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.4rem, 5vw, 4.2rem);
+      line-height: 1.08;
+      margin: 0 0 16px;
+      letter-spacing: 0.5px;
+      color: #0f172a;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1.1rem, 2vw, 1.35rem);
+      font-weight: 800;
+      color: #1e3a8a;
+      margin-bottom: 18px;
+    }
+
+    .hero p {
+      font-size: 1.08rem;
+      color: #334155;
+      margin: 0 0 24px;
+    }
+
+    .hero-points {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 26px;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(15,23,42,0.06);
+      color: #0f172a;
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 20px;
+      border-radius: 16px;
+      border: 1px solid transparent;
+      font-weight: 800;
+      font-size: 1rem;
+      transition: 0.25s ease;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), var(--primary-2));
+      color: white;
+      box-shadow: 0 14px 26px rgba(37,99,235,0.28);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 32px rgba(37,99,235,0.34);
+    }
+
+    .btn-secondary {
+      background: white;
+      color: #0f172a;
+      border-color: rgba(148,163,184,0.24);
+    }
+
+    .btn-secondary:hover {
+      border-color: rgba(37,99,235,0.4);
+      color: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    .hero-side {
+      padding: 22px;
+      display: grid;
+      gap: 18px;
+    }
+
+    .profile-card {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 16px;
+      align-items: center;
+      padding: 18px;
+      background: linear-gradient(180deg, rgba(37,99,235,0.06), rgba(37,99,235,0.02));
+      border-radius: 22px;
+      border: 1px solid rgba(37,99,235,0.10);
+    }
+
+    .avatar-wrap {
+      position: relative;
+      width: 120px;
+      height: 120px;
+      border-radius: 28px;
+      overflow: hidden;
+      background: linear-gradient(135deg, #dbeafe, #eff6ff);
+      border: 3px solid rgba(255,255,255,0.9);
+      box-shadow: 0 14px 28px rgba(37,99,235,0.14);
+      flex-shrink: 0;
+    }
+
+    .avatar-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .avatar-fallback {
+      position: absolute;
+      inset: 0;
+      display: none;
+      place-items: center;
+      font-size: 2rem;
+      font-weight: 900;
+      color: #1e3a8a;
+      background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+    }
+
+    .profile-card h2 {
+      margin: 0 0 6px;
+      font-size: 1.55rem;
+      line-height: 1.2;
+    }
+
+    .profile-card p {
+      margin: 0;
+      color: #475569;
+      line-height: 1.65;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .info-card {
+      padding: 18px;
+      border-radius: 20px;
+      box-shadow: none;
+      background: rgba(15,23,42,0.03);
+      border: 1px solid rgba(148,163,184,0.14);
+    }
+
+    .info-label {
+      display: block;
+      font-size: 0.92rem;
+      color: #64748b;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .info-value {
+      font-size: 1.04rem;
+      font-weight: 800;
+      color: #0f172a;
+      line-height: 1.5;
+    }
+
+    main {
+      padding-bottom: 60px;
+    }
+
+    .section {
+      padding: 22px 0;
+      scroll-margin-top: calc(var(--nav-h) + 18px);
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 18px;
+      margin-bottom: 18px;
+    }
+
+    .section-head h2 {
+      margin: 0;
+      font-size: clamp(1.8rem, 2.8vw, 2.4rem);
+      line-height: 1.2;
+      color: #0f172a;
+    }
+
+    .section-head p {
+      margin: 8px 0 0;
+      color: #64748b;
+      font-size: 1.02rem;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 24px;
+    }
+
+    .card {
+      padding: 28px;
+    }
+
+    .card p:last-child { margin-bottom: 0; }
+
+    .about-lead {
+      font-size: 1.12rem;
+      color: #334155;
+    }
+
+    .traits {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .trait {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(34,197,94,0.10);
+      color: #166534;
+      font-weight: 800;
+      font-size: 0.95rem;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 18px;
+    }
+
+    .timeline-card {
+      padding: 24px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .timeline-card::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 6px;
+      background: linear-gradient(180deg, var(--primary), var(--accent));
+      border-radius: 999px;
+    }
+
+    .timeline-meta {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 8px;
+      padding-left: 10px;
+    }
+
+    .timeline-meta h3 {
+      margin: 0;
+      font-size: 1.18rem;
+      line-height: 1.35;
+    }
+
+    .timeline-badge {
+      align-self: flex-start;
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 800;
+      background: rgba(37,99,235,0.10);
+      color: var(--primary);
+    }
+
+    .timeline-body {
+      padding-left: 10px;
+      color: #475569;
+      font-size: 1rem;
+    }
+
+    .timeline-body ul,
+    .skill-card ul,
+    .award-card ul,
+    .contact-card ul {
+      margin: 10px 0 0;
+      padding-left: 20px;
+    }
+
+    .highlight-box {
+      padding: 20px;
+      border-radius: 22px;
+      background: linear-gradient(180deg, rgba(37,99,235,0.08), rgba(37,99,235,0.03));
+      border: 1px solid rgba(37,99,235,0.14);
+    }
+
+    .project-card {
+      padding: 30px;
+      background:
+        linear-gradient(135deg, rgba(15,23,42,0.96), rgba(30,41,59,0.94));
+      color: white;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .project-card::after {
+      content: "";
+      position: absolute;
+      right: -40px;
+      bottom: -40px;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(96,165,250,0.26), transparent 65%);
+      pointer-events: none;
+    }
+
+    .project-tag {
+      display: inline-block;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(96,165,250,0.14);
+      color: #bfdbfe;
+      font-weight: 800;
+      font-size: 0.9rem;
+      margin-bottom: 14px;
+    }
+
+    .project-card h3 {
+      margin: 0 0 14px;
+      font-size: 1.65rem;
+      line-height: 1.35;
+    }
+
+    .project-card p {
+      color: #dbeafe;
+      font-size: 1.04rem;
+      margin: 0 0 16px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .project-points {
+      display: grid;
+      gap: 10px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .project-point {
+      padding: 12px 14px;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.08);
+      color: white;
+      font-weight: 600;
+    }
+
+    .cards-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .skill-card,
+    .award-card,
+    .interest-card,
+    .contact-card {
+      padding: 24px;
+    }
+
+    .skill-card h3,
+    .award-card h3,
+    .interest-card h3,
+    .contact-card h3 {
+      margin: 0 0 10px;
+      font-size: 1.2rem;
+      line-height: 1.35;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .tag {
+      padding: 10px 12px;
+      border-radius: 999px;
+      background: rgba(15,23,42,0.06);
+      color: #0f172a;
+      font-weight: 800;
+      font-size: 0.92rem;
+    }
+
+    .award-card strong,
+    .contact-card strong {
+      color: #0f172a;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .contact-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      color: var(--primary);
+      margin-top: 10px;
+      word-break: break-all;
+    }
+
+    .footer {
+      padding: 30px 0 46px;
+      color: #64748b;
+      text-align: center;
+      font-size: 0.96rem;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .to-top {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 999;
+      width: 52px;
+      height: 52px;
+      border: none;
+      border-radius: 18px;
+      background: linear-gradient(135deg, var(--primary), var(--primary-2));
+      color: white;
+      font-size: 1.25rem;
+      font-weight: 900;
+      box-shadow: 0 18px 30px rgba(37,99,235,0.30);
+      cursor: pointer;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(10px);
+      transition: 0.3s ease;
+    }
+
+    .to-top.show {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 1024px) {
+      .hero-wrap,
+      .grid-2,
+      .cards-3,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .profile-card,
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .avatar-wrap {
+        width: 130px;
+        height: 130px;
+      }
+
+      .hero-main,
+      .hero-side,
+      .card,
+      .timeline-card,
+      .skill-card,
+      .award-card,
+      .contact-card,
+      .project-card,
+      .interest-card {
+        border-radius: 24px;
+      }
+    }
+
+    @media (max-width: 720px) {
+      :root { --nav-h: 70px; }
+      .nav {
+        align-items: center;
+        padding: 10px 0;
+        height: auto;
+      }
+      .brand span:last-child { display: none; }
+      .nav-links {
+        gap: 4px;
+      }
+      .nav-links a {
+        padding: 8px 10px;
+        font-size: 0.88rem;
+      }
+      .hero { padding-top: 28px; }
+      .hero-main { padding: 26px; }
+      .hero h1 { font-size: 2.3rem; }
+      .hero p,
+      .about-lead,
+      .timeline-body,
+      .project-card p,
+      .section-head p {
+        font-size: 1rem;
+      }
+      .hero-actions,
+      .hero-points {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .btn { width: 100%; }
+      .section-head {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <a class="brand" href="#top">
+        <span class="brand-badge">周</span>
+        <span>周大凱｜履歷網站</span>
+      </a>
+      <nav class="nav-links" aria-label="主選單">
+        <a href="#about">關於我</a>
+        <a href="#education">學經歷</a>
+        <a href="#project">專題研究</a>
+        <a href="#skills">技能</a>
+        <a href="#awards">證照與獲獎</a>
+        <a href="#contact">聯絡方式</a>
+      </nav>
+    </div>
+  </header>
+
+  <div id="top"></div>
+
+  <section class="hero">
+    <div class="container hero-wrap">
+      <article class="hero-main reveal">
+        <div class="eyebrow">應屆畢業生｜智慧自動化工程系</div>
+        <h1>周大凱</h1>
+        <div class="hero-subtitle">把想法變成行動，把行動變成成長。</div>
+        <p>
+          我畢業於<strong>國立勤益科技大學智慧自動化工程系</strong>，具備 Python 程式撰寫、基礎機械繪圖、文書處理與專題實作能力。
+          在校期間曾擔任班代、副班代與學藝，累積了溝通協調、活動安排與團隊合作的經驗。
+          我希望把在校所學與專題研究成果，轉化成進入職場後的實際執行力。
+        </p>
+        <div class="hero-points">
+          <span class="chip">🎓 國立勤益科技大學畢業</span>
+          <span class="chip">💻 Python / MediaPipe / BiLSTM</span>
+          <span class="chip">🏆 DSP 創思設計競賽第三名</span>
+          <span class="chip">🤝 ENFJ 傾向｜善於溝通協作</span>
+        </div>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#project">查看專題重點</a>
+          <a class="btn btn-secondary" href="#contact">聯絡我</a>
+          <a class="btn btn-secondary" href="resume.pdf" target="_blank" rel="noopener">下載 PDF 履歷</a>
+        </div>
+      </article>
+
+      <aside class="hero-side reveal">
+        <div class="profile-card">
+          <div class="avatar-wrap">
+            <img src="profile.jpg" alt="周大凱個人照片" id="profileImg" />
+            <div class="avatar-fallback" id="avatarFallback">周</div>
+          </div>
+          <div>
+            <h2>應屆畢業生求職版</h2>
+            <p>
+              這份網站履歷以「清楚、正式、好閱讀」為核心，適合放在 GitHub Pages 與個人網域上，讓主管能快速看到你的重點能力。
+            </p>
+          </div>
+        </div>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <span class="info-label">最高學歷</span>
+            <div class="info-value">國立勤益科技大學<br />智慧自動化工程系</div>
+          </div>
+          <div class="info-card">
+            <span class="info-label">人格特質</span>
+            <div class="info-value">主動執行、樂於合作、責任感強</div>
+          </div>
+          <div class="info-card">
+            <span class="info-label">專題方向</span>
+            <div class="info-value">MediaPipe + BiLSTM<br />台灣手語即時溝通系統</div>
+          </div>
+          <div class="info-card">
+            <span class="info-label">求職定位</span>
+            <div class="info-value">新鮮人 / 技術助理 / AI 應用相關職缺</div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <main>
+    <section class="section" id="about">
+      <div class="container grid-2">
+        <div class="card reveal">
+          <div class="section-head">
+            <div>
+              <h2>關於我</h2>
+              <p>用一句話介紹自己，讓面試官快速記住你的特質。</p>
+            </div>
+          </div>
+          <p class="about-lead">
+            我是周大凱，畢業於國立勤益科技大學智慧自動化工程系。大學期間除了完成系上學習外，也曾擔任班代、副班代與學藝，
+            累積了溝通協調、活動安排與團隊合作的實務經驗。我的專題研究聚焦於
+            <strong>「基於 MediaPipe 與 BiLSTM 之台灣手語即時溝通系統」</strong>，並獲得
+            <strong>教育部技專校院第 21 屆數位訊號處理創思設計競賽健康照護組第三名</strong>。
+            我做事重視執行力，面對新任務時願意主動學習、持續修正，並以實際成果累積自己的成長。
+          </p>
+          <div class="traits">
+            <span class="trait">溝通協調</span>
+            <span class="trait">主動學習</span>
+            <span class="trait">抗壓與責任感</span>
+            <span class="trait">團隊合作</span>
+            <span class="trait">執行力強</span>
+          </div>
+        </div>
+
+        <div class="card reveal">
+          <div class="section-head">
+            <div>
+              <h2>求職亮點</h2>
+              <p>主管最在意的，不只是你會什麼，而是你做過什麼。</p>
+            </div>
+          </div>
+          <div class="highlight-box">
+            <p><strong>技術面：</strong>具備 Python 撰寫能力，曾參與 AI 視覺與手語辨識相關專題研究。</p>
+            <p><strong>組織面：</strong>擔任班代、副班代、學藝，熟悉溝通、安排與協調。</p>
+            <p><strong>成果面：</strong>專題競賽獲獎，能把學習內容整理成具體成果。</p>
+            <p><strong>個人面：</strong>以「把想法變成行動，把行動變成成長」作為自我要求。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="education">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <h2>學歷與經歷</h2>
+            <p>把校園經驗整理成時間軸，會比單純條列更清楚、更有層次。</p>
+          </div>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline-card reveal">
+            <div class="timeline-meta">
+              <h3>國立勤益科技大學｜智慧自動化工程系</h3>
+              <span class="timeline-badge">應屆畢業</span>
+            </div>
+            <div class="timeline-body">
+              大學期間除完成系上專業課程外，也積極參與班級事務與專題研究。
+              <ul>
+                <li>曾擔任班代、副班代、學藝，協助班務溝通、資料整理與活動安排。</li>
+                <li>透過幹部經驗，培養責任感、協調能力與團隊合作能力。</li>
+                <li>畢業專題聚焦於 AI 影像辨識與台灣手語即時溝通應用。</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="timeline-card reveal">
+            <div class="timeline-meta">
+              <h3>桃園市育達高中</h3>
+              <span class="timeline-badge">已畢業</span>
+            </div>
+            <div class="timeline-body">
+              高中階段曾參與班級幹部工作，累積基礎的組織與管理經驗。
+              <ul>
+                <li>曾擔任班長、總務，熟悉行政安排與同學間的溝通協調。</li>
+                <li>培養主動負責、按時完成事項的做事習慣。</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="project">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <h2>專題研究</h2>
+            <p>這一區是你網站的核心，因為它最能直接證明你的技術能力與執行力。</p>
+          </div>
+        </div>
+
+        <article class="project-card reveal">
+          <span class="project-tag">Graduation Project</span>
+          <h3>基於 MediaPipe 與 BiLSTM 之台灣手語即時溝通系統</h3>
+          <p>
+            本專題以影像辨識與序列模型為基礎，嘗試建構可即時辨識台灣手語的溝通系統。
+            透過 MediaPipe 擷取關鍵點，再結合 BiLSTM 進行時序特徵學習，提升手語動作辨識的即時性與實用性。
+            專題重點不只在模型建立，也在於如何把理論真正實作成可展示、可應用的系統成果。
+          </p>
+          <div class="project-points">
+            <div class="project-point">📌 技術關鍵：MediaPipe、BiLSTM、即時影像辨識</div>
+            <div class="project-point">📌 執行重點：資料處理、模型訓練、功能整合與成果展示</div>
+            <div class="project-point">📌 應用價值：協助手語溝通、提升人機互動與輔助溝通可能性</div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <h2>技能與個人特長</h2>
+            <p>技能呈現以「會什麼 + 能做到什麼」來表達，比只列軟體名稱更有說服力。</p>
+          </div>
+        </div>
+
+        <div class="cards-3">
+          <article class="skill-card reveal">
+            <h3>程式與技術能力</h3>
+            <ul>
+              <li>Python 程式撰寫</li>
+              <li>AI / 影像辨識專題基礎實作</li>
+              <li>能配合需求進行功能測試與調整</li>
+            </ul>
+            <div class="tag-list">
+              <span class="tag">Python</span>
+              <span class="tag">MediaPipe</span>
+              <span class="tag">BiLSTM</span>
+            </div>
+          </article>
+
+          <article class="skill-card reveal">
+            <h3>工程與工具能力</h3>
+            <ul>
+              <li>基礎機械繪圖</li>
+              <li>SolidWorks 基本操作</li>
+              <li>具備學習與延伸使用工程軟體的能力</li>
+            </ul>
+            <div class="tag-list">
+              <span class="tag">SolidWorks</span>
+              <span class="tag">機圖基礎</span>
+              <span class="tag">工程邏輯</span>
+            </div>
+          </article>
+
+          <article class="skill-card reveal">
+            <h3>文書與表達能力</h3>
+            <ul>
+              <li>基本文書處理</li>
+              <li>簡報整理與報告製作</li>
+              <li>可協助資料彙整與內容編排</li>
+            </ul>
+            <div class="tag-list">
+              <span class="tag">Word</span>
+              <span class="tag">PowerPoint</span>
+              <span class="tag">電腦軟體應用</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="awards">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <h2>證照、獲獎與個人興趣</h2>
+            <p>履歷網站不只要寫能力，也要讓人看見你的完整性與生活感。</p>
+          </div>
+        </div>
+
+        <div class="cards-3">
+          <article class="award-card reveal">
+            <h3>證照</h3>
+            <ul>
+              <li><strong>電腦軟體應用丙級</strong></li>
+            </ul>
+            <p>具備基本文書處理與電腦操作能力，可作為職場基礎行政與資料整理能力的證明。</p>
+          </article>
+
+          <article class="award-card reveal">
+            <h3>獲獎紀錄</h3>
+            <ul>
+              <li><strong>教育部技專校院第 21 屆數位訊號處理創思設計競賽</strong></li>
+              <li>健康照護組｜第三名</li>
+            </ul>
+            <p>這項成果能直接展現你不是只有修課，而是真的有把專題做到可以對外競賽的程度。</p>
+          </article>
+
+          <article class="interest-card reveal">
+            <h3>個人興趣</h3>
+            <div class="tag-list">
+              <span class="tag">健身</span>
+              <span class="tag">打籃球</span>
+              <span class="tag">玩滑板</span>
+              <span class="tag">彈鋼琴</span>
+              <span class="tag">打撞球</span>
+            </div>
+            <p>這些興趣讓我保持穩定的生活節奏，也培養自律、耐心與持續精進的習慣。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <h2>聯絡方式</h2>
+            <p>建議保留最重要的三個聯絡入口，讓主管最短時間就能找到你。</p>
+          </div>
+        </div>
+
+        <div class="contact-grid">
+          <article class="contact-card reveal">
+            <h3>電子郵件</h3>
+            <p>若有面試邀約、合作需求或職缺資訊，歡迎直接來信。</p>
+            <a class="contact-link" href="mailto:kevin10190829@gmail.com">kevin10190829@gmail.com</a>
+          </article>
+
+          <article class="contact-card reveal">
+            <h3>Instagram</h3>
+            <p>可作為基本社群聯繫方式，建議同步整理公開內容，維持專業形象。</p>
+            <a class="contact-link" href="https://www.instagram.com/kevin__0908/" target="_blank" rel="noopener">@kevin__0908</a>
+          </article>
+
+          <article class="contact-card reveal">
+            <h3>個人網站</h3>
+            <p>目前已完成個人網域、GitHub Pages 與 Cloudflare 託管的基礎架設。</p>
+            <a class="contact-link" href="https://www.takaichou.uk/" target="_blank" rel="noopener">www.takaichou.uk</a>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      © 2026 周大凱 Takai Chou. All Rights Reserved.
+    </div>
+  </footer>
+
+  <button class="to-top" id="toTop" aria-label="回到頂部">↑</button>
+
+  <script>
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-links a');
+    const revealEls = document.querySelectorAll('.reveal');
+    const toTop = document.getElementById('toTop');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    }, { threshold: 0.12 });
+
+    revealEls.forEach(el => observer.observe(el));
+
+    function setActiveLink() {
+      const scrollY = window.scrollY + 130;
+      sections.forEach(section => {
+        const top = section.offsetTop;
+        const height = section.offsetHeight;
+        const id = section.getAttribute('id');
+        if (scrollY >= top && scrollY < top + height) {
+          navLinks.forEach(link => link.classList.remove('active'));
+          const active = document.querySelector(`.nav-links a[href="#${id}"]`);
+          if (active) active.classList.add('active');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', () => {
+      setActiveLink();
+      if (window.scrollY > 400) {
+        toTop.classList.add('show');
+      } else {
+        toTop.classList.remove('show');
+      }
+    });
+
+    toTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    setActiveLink();
+
+    const img = document.getElementById('profileImg');
+    const fallback = document.getElementById('avatarFallback');
+    img.addEventListener('error', () => {
+      img.style.display = 'none';
+      fallback.style.display = 'grid';
+    });
+  </script>
+</body>
+</html>
